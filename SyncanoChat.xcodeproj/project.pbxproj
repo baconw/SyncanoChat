@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		3C0A35594123C045258C7CC0 /* Pods_SyncanoChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B97F75C65A2B23C5467DBC /* Pods_SyncanoChatTests.framework */; };
 		535B4AFFBFB15F999248891E /* Pods_SyncanoChatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1563F8212C26F7ABDD13E2A /* Pods_SyncanoChatUITests.framework */; };
+		9E0A5D9F1D488D21000892A5 /* CTUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0A5D9E1D488D21000892A5 /* CTUser.swift */; };
+		9E0A5DA11D489387000892A5 /* CTChannelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0A5DA01D489387000892A5 /* CTChannelDelegate.swift */; };
+		9E0A5DA31D4893F4000892A5 /* CTChannelNotificationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0A5DA21D4893F4000892A5 /* CTChannelNotificationMessage.swift */; };
+		9E0A5DA51D489440000892A5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0A5DA41D489440000892A5 /* Constants.swift */; };
+		9E0A5DA71D4894D1000892A5 /* CTChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0A5DA61D4894D1000892A5 /* CTChannel.swift */; };
+		9E0A5DAB1D48AA39000892A5 /* CTPlease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0A5DAA1D48AA39000892A5 /* CTPlease.swift */; };
 		9E6C2CFE1D3F6474006640B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C2CFD1D3F6474006640B3 /* AppDelegate.swift */; };
 		9E6C2D001D3F6474006640B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C2CFF1D3F6474006640B3 /* ViewController.swift */; };
 		9E6C2D031D3F6474006640B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6C2D011D3F6474006640B3 /* Main.storyboard */; };
@@ -17,14 +23,18 @@
 		9E6C2D131D3F6474006640B3 /* SyncanoChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C2D121D3F6474006640B3 /* SyncanoChatTests.swift */; };
 		9E6C2D1E1D3F6474006640B3 /* SyncanoChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C2D1D1D3F6474006640B3 /* SyncanoChatUITests.swift */; };
 		9E6C2D2C1D3F64DF006640B3 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 9E6C2D2B1D3F64DF006640B3 /* Podfile */; };
-		9E6C2D311D40B173006640B3 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C2D301D40B173006640B3 /* Message.swift */; };
+		9E6C2D311D40B173006640B3 /* MessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C2D301D40B173006640B3 /* MessageManager.swift */; };
 		9E6C2D331D41C77B006640B3 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C2D321D41C77B006640B3 /* Settings.swift */; };
-		9E6C2D351D41C916006640B3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C2D341D41C916006640B3 /* LoginViewController.swift */; };
+		9E6C2D351D41C916006640B3 /* CertificateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C2D341D41C916006640B3 /* CertificateManager.swift */; };
 		9EBC734D1D430BDE0056ACC3 /* RequestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBC734C1D430BDE0056ACC3 /* RequestAPI.swift */; };
 		9EBC734F1D4603C60056ACC3 /* WPD.cer in Resources */ = {isa = PBXBuildFile; fileRef = 9EBC734E1D4603C60056ACC3 /* WPD.cer */; };
 		9EBC73511D4606510056ACC3 /* client.p12 in Resources */ = {isa = PBXBuildFile; fileRef = 9EBC73501D4606510056ACC3 /* client.p12 */; };
 		9EBC73541D47094C0056ACC3 /* server.cer in Resources */ = {isa = PBXBuildFile; fileRef = 9EBC73521D47094C0056ACC3 /* server.cer */; };
 		9EBC73551D47094C0056ACC3 /* server.pfx in Resources */ = {isa = PBXBuildFile; fileRef = 9EBC73531D47094C0056ACC3 /* server.pfx */; };
+		9EBE5C201D4B36E4003893B5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBE5C1F1D4B36E4003893B5 /* CoreData.framework */; };
+		9EBE5C441D4B3B78003893B5 /* Message.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9EBE5C421D4B3B78003893B5 /* Message.xcdatamodeld */; };
+		9EBE5C4F1D4B422D003893B5 /* Message+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBE5C4D1D4B422D003893B5 /* Message+CoreDataProperties.swift */; };
+		9EBE5C501D4B422D003893B5 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBE5C4E1D4B422D003893B5 /* Message.swift */; };
 		9EE5E3D01D43089E00E93B48 /* RequestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE5E3CF1D43089E00E93B48 /* RequestClient.swift */; };
 		B9643A26B4CF3890B7EEF96B /* Pods_SyncanoChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F698D68ABA680E610B0F13 /* Pods_SyncanoChat.framework */; };
 /* End PBXBuildFile section */
@@ -50,6 +60,12 @@
 		4A64CD115AE9551FF373877E /* Pods-SyncanoChatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SyncanoChatUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SyncanoChatUITests/Pods-SyncanoChatUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4FFDFD791AB40B794F97157D /* Pods-SyncanoChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SyncanoChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SyncanoChat/Pods-SyncanoChat.debug.xcconfig"; sourceTree = "<group>"; };
 		8F08C7284C278EFC36E06160 /* Pods-SyncanoChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SyncanoChatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SyncanoChatTests/Pods-SyncanoChatTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9E0A5D9E1D488D21000892A5 /* CTUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTUser.swift; sourceTree = "<group>"; };
+		9E0A5DA01D489387000892A5 /* CTChannelDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTChannelDelegate.swift; sourceTree = "<group>"; };
+		9E0A5DA21D4893F4000892A5 /* CTChannelNotificationMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTChannelNotificationMessage.swift; sourceTree = "<group>"; };
+		9E0A5DA41D489440000892A5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9E0A5DA61D4894D1000892A5 /* CTChannel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTChannel.swift; sourceTree = "<group>"; };
+		9E0A5DAA1D48AA39000892A5 /* CTPlease.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTPlease.swift; sourceTree = "<group>"; };
 		9E6C2CFA1D3F6474006640B3 /* SyncanoChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SyncanoChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E6C2CFD1D3F6474006640B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E6C2CFF1D3F6474006640B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,15 +81,19 @@
 		9E6C2D1F1D3F6474006640B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E6C2D2B1D3F64DF006640B3 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E6C2D2D1D3F67DA006640B3 /* SyncanoChat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SyncanoChat-Bridging-Header.h"; sourceTree = "<group>"; };
-		9E6C2D301D40B173006640B3 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		9E6C2D301D40B173006640B3 /* MessageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageManager.swift; sourceTree = "<group>"; };
 		9E6C2D321D41C77B006640B3 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		9E6C2D341D41C916006640B3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9E6C2D341D41C916006640B3 /* CertificateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificateManager.swift; sourceTree = "<group>"; };
 		9EBBAD1A03BC40ED4BF2CB39 /* Pods-SyncanoChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SyncanoChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-SyncanoChat/Pods-SyncanoChat.release.xcconfig"; sourceTree = "<group>"; };
 		9EBC734C1D430BDE0056ACC3 /* RequestAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestAPI.swift; sourceTree = "<group>"; };
 		9EBC734E1D4603C60056ACC3 /* WPD.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = WPD.cer; sourceTree = "<group>"; };
 		9EBC73501D4606510056ACC3 /* client.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = client.p12; sourceTree = "<group>"; };
 		9EBC73521D47094C0056ACC3 /* server.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = server.cer; sourceTree = "<group>"; };
 		9EBC73531D47094C0056ACC3 /* server.pfx */ = {isa = PBXFileReference; lastKnownFileType = file; path = server.pfx; sourceTree = "<group>"; };
+		9EBE5C1F1D4B36E4003893B5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9EBE5C431D4B3B78003893B5 /* Message.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Message.xcdatamodel; sourceTree = "<group>"; };
+		9EBE5C4D1D4B422D003893B5 /* Message+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Message+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9EBE5C4E1D4B422D003893B5 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		9EE5E3CF1D43089E00E93B48 /* RequestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestClient.swift; sourceTree = "<group>"; };
 		A1563F8212C26F7ABDD13E2A /* Pods_SyncanoChatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SyncanoChatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF7BB64500FBDF7035B2F8F /* Pods-SyncanoChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SyncanoChatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SyncanoChatTests/Pods-SyncanoChatTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -87,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EBE5C201D4B36E4003893B5 /* CoreData.framework in Frameworks */,
 				B9643A26B4CF3890B7EEF96B /* Pods_SyncanoChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,6 +147,7 @@
 		9583BB832A01A452619A104A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9EBE5C1F1D4B36E4003893B5 /* CoreData.framework */,
 				E6F698D68ABA680E610B0F13 /* Pods_SyncanoChat.framework */,
 				B6B97F75C65A2B23C5467DBC /* Pods_SyncanoChatTests.framework */,
 				A1563F8212C26F7ABDD13E2A /* Pods_SyncanoChatUITests.framework */,
@@ -163,6 +185,8 @@
 		9E6C2CFC1D3F6474006640B3 /* SyncanoChat */ = {
 			isa = PBXGroup;
 			children = (
+				9EBE5C4D1D4B422D003893B5 /* Message+CoreDataProperties.swift */,
+				9EBE5C4E1D4B422D003893B5 /* Message.swift */,
 				9E6C2CFD1D3F6474006640B3 /* AppDelegate.swift */,
 				9E6C2CFF1D3F6474006640B3 /* ViewController.swift */,
 				9E6C2D011D3F6474006640B3 /* Main.storyboard */,
@@ -170,11 +194,18 @@
 				9E6C2D061D3F6474006640B3 /* LaunchScreen.storyboard */,
 				9E6C2D091D3F6474006640B3 /* Info.plist */,
 				9E6C2D2D1D3F67DA006640B3 /* SyncanoChat-Bridging-Header.h */,
-				9E6C2D301D40B173006640B3 /* Message.swift */,
+				9E6C2D301D40B173006640B3 /* MessageManager.swift */,
 				9E6C2D321D41C77B006640B3 /* Settings.swift */,
-				9E6C2D341D41C916006640B3 /* LoginViewController.swift */,
+				9E6C2D341D41C916006640B3 /* CertificateManager.swift */,
 				9EE5E3CF1D43089E00E93B48 /* RequestClient.swift */,
 				9EBC734C1D430BDE0056ACC3 /* RequestAPI.swift */,
+				9E0A5D9E1D488D21000892A5 /* CTUser.swift */,
+				9E0A5DA01D489387000892A5 /* CTChannelDelegate.swift */,
+				9E0A5DA21D4893F4000892A5 /* CTChannelNotificationMessage.swift */,
+				9E0A5DA41D489440000892A5 /* Constants.swift */,
+				9E0A5DA61D4894D1000892A5 /* CTChannel.swift */,
+				9E0A5DAA1D48AA39000892A5 /* CTPlease.swift */,
+				9EBE5C421D4B3B78003893B5 /* Message.xcdatamodeld */,
 			);
 			path = SyncanoChat;
 			sourceTree = "<group>";
@@ -464,13 +495,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E6C2D311D40B173006640B3 /* Message.swift in Sources */,
+				9E6C2D311D40B173006640B3 /* MessageManager.swift in Sources */,
+				9E0A5DA51D489440000892A5 /* Constants.swift in Sources */,
 				9E6C2D001D3F6474006640B3 /* ViewController.swift in Sources */,
+				9EBE5C441D4B3B78003893B5 /* Message.xcdatamodeld in Sources */,
 				9EE5E3D01D43089E00E93B48 /* RequestClient.swift in Sources */,
 				9E6C2D331D41C77B006640B3 /* Settings.swift in Sources */,
-				9E6C2D351D41C916006640B3 /* LoginViewController.swift in Sources */,
+				9E6C2D351D41C916006640B3 /* CertificateManager.swift in Sources */,
+				9E0A5D9F1D488D21000892A5 /* CTUser.swift in Sources */,
+				9EBE5C4F1D4B422D003893B5 /* Message+CoreDataProperties.swift in Sources */,
 				9EBC734D1D430BDE0056ACC3 /* RequestAPI.swift in Sources */,
+				9E0A5DA11D489387000892A5 /* CTChannelDelegate.swift in Sources */,
+				9E0A5DAB1D48AA39000892A5 /* CTPlease.swift in Sources */,
 				9E6C2CFE1D3F6474006640B3 /* AppDelegate.swift in Sources */,
+				9EBE5C501D4B422D003893B5 /* Message.swift in Sources */,
+				9E0A5DA71D4894D1000892A5 /* CTChannel.swift in Sources */,
+				9E0A5DA31D4893F4000892A5 /* CTChannelNotificationMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,6 +767,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9EBE5C421D4B3B78003893B5 /* Message.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9EBE5C431D4B3B78003893B5 /* Message.xcdatamodel */,
+			);
+			currentVersion = 9EBE5C431D4B3B78003893B5 /* Message.xcdatamodel */;
+			path = Message.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9E6C2CF21D3F6474006640B3 /* Project object */;
 }

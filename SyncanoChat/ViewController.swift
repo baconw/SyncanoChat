@@ -8,18 +8,18 @@
 
 import UIKit
 import JSQMessagesViewController
-import syncano_ios
-
 
 class ViewController: JSQMessagesViewController {
     
+    var messageManager = MessageManager()
     let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor(red: 10/255, green: 180/255, blue: 230/255, alpha: 1.0))
     let outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(UIColor.lightGrayColor())
     
-    let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier(loginViewControllerIdentifier) as! LoginViewController
+    //let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier(loginViewControllerIdentifier) as! LoginViewController
     
     //let syncano = Syncano.sharedInstanceWithApiKey(syncanoApiKey, instanceName: syncanoInstaneName)
-    let channel = SCChannel(name: syncanoChannelName)
+    //let channel = SCChannel(name: syncanoChannelName)
+    let channel = CTChannel(name: syncanoChannelName)
     
     var messages = [JSQMessage]()
     
@@ -28,13 +28,10 @@ class ViewController: JSQMessagesViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.setup()
-        //self.addDemoMessages()
-        self.downloadNewestMessagesFromSyncano()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.showLoginViewControllerIfNotLoggedIn()
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,23 +42,51 @@ class ViewController: JSQMessagesViewController {
     func reloadMessageView() {
         self.collectionView?.reloadData()
     }
+    @IBAction func editPressed(sender: UIBarButtonItem) {
+        print("editPressed")
+    }
 }
 
 extension ViewController {
     
     func setup() {
-        self.title = "Syncano ChatApp"
-        setupSenderData()
-        self.channel.delegate = self
-        self.channel.subscribeToChannel()
-        self.loginViewController.delegate = self
+        print("setup")
+        CertificateManager.initCertificate()
+        
+        self.title = "Cattie ChatApp"
+        self.senderId = ME
+        
+        self.senderDisplayName = ME
+        self.prepareAppForNewUser()
+        
+        self.beginChat({ isSucceed in
+            //self.prepareAppForNewUser()
+            self.sendCommandToCattie("1")
+        })
+        
+        //initTimer()
+        
     }
     
+    func prepareAppForNewUser() {
+        print("prepareAppForNewUser")
+        //self.setupSenderData()
+        self.reloadAllMessages()
+    }
+    
+    func reloadAllMessages() {
+        self.messages = []
+        self.reloadMessageView()
+        self.retriveMessagesFromStorage()
+    }
+    
+    /*
     func setupSenderData() {
-        let sender = (SCUser.currentUser() != nil) ? SCUser.currentUser()!.username : ""
+        let sender = (CTUser.currentUser() != nil) ? CTUser.currentUser()!.username : ""
         self.senderId = sender
         self.senderDisplayName = sender
     }
+ */
     
     //data
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -79,39 +104,57 @@ extension ViewController {
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageBubbleImageDataSource! {
         let data = messages[indexPath.row]
+        //print("sender:\(data.senderId)")
         switch(data.senderId) {
-        case self.senderId:
-            return self.outgoingBubble
-        default:
+        case SERVER:
             return self.incomingBubble
+        default:
+            return self.outgoingBubble
         }
     }
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageAvatarImageDataSource! {
-        return nil
+        let image:UIImage
+        let data = messages[indexPath.row]
+        switch(data.senderId) {
+        case SERVER:
+            image = UIImage(named: "cat-face")!
+        default:
+            image = UIImage(named: "me-face")!
+        }
+        
+        let diameter = UInt(collectionView.collectionViewLayout.outgoingAvatarViewSize.width)
+        let avatarImage = JSQMessagesAvatarImageFactory.avatarImageWithImage(image, diameter: diameter)
+        return avatarImage
     }
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, attributedTextForMessageBubbleTopLabelAtIndexPath indexPath: NSIndexPath!) -> NSAttributedString! {
+        /*
         let data = self.collectionView(self.collectionView, messageDataForItemAtIndexPath: indexPath)
         if (self.senderDisplayName == data.senderDisplayName()) {
-            return nil
+            return NSAttributedString(string: ME)
         }
         return NSAttributedString(string: data.senderDisplayName())
+         */
+        return nil
     }
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForMessageBubbleTopLabelAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+        /*
         let data = self.collectionView(self.collectionView, messageDataForItemAtIndexPath: indexPath)
         if(self.senderDisplayName == data.senderDisplayName()){
             return 0.0
         }
-        return kJSQMessagesCollectionViewCellLabelHeightDefault
+        */
+        //return kJSQMessagesCollectionViewCellLabelHeightDefault
+        return 0.0
     }
     
     //toolbar
     override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
         let message = JSQMessage(senderId: senderId, senderDisplayName: senderDisplayName, date: date, text: text)
         self.messages += [message]
-        self.sendMessageToSyncano(message)
+        self.sendMessageToCattie(message)
         self.finishSendingMessage()
     }
     
@@ -120,35 +163,66 @@ extension ViewController {
     }
     
     //syncano
-    func sendMessageToSyncano(message:JSQMessage){
-        let messageToSend = Message()
-        messageToSend.text = message.text
-        messageToSend.senderId = self.senderId
-        messageToSend.channel = syncanoChannelName
-        messageToSend.other_permissions = .Full
-        messageToSend.saveWithCompletionBlock { error in
-            if (error != nil) {
-                //Super cool error handling
+    func sendMessageToCattie(message:JSQMessage){
+        print("sendMessageToCattie 1")
+        
+        messageManager.saveMessage(message.text, sender: self.senderId)
+        
+        if(CTUser.isServerRunning){
+            self.doSendMessageToCattie(message)
+        }else{
+            self.beginChat({isSucceed in self.doSendMessageToCattie(message)})
+        }
+    }
+    
+    func sendCommandToCattie(commandStr:String){
+        print("sendCommandToCattie 1")
+        
+        if(CTUser.isServerRunning){
+            self.doSendCommandToCattie(commandStr)
+        }else{
+            self.beginChat({isSucceed in self.doSendCommandToCattie(commandStr)})
+        }
+    }
+    
+    func doSendMessageToCattie(message:JSQMessage){
+        print("doSendMessageToCattie 1")
+        messageManager.sendMsgWithCompletionBlock(message.text) {responseMessage, error in
+            if (error == nil) {
+                //self.messages.append(self.jsqMessageFromSyncanoMessage(message!))
+                self.messages.append(self.jsqMessageFromSyncanoMessage(responseMessage))
+                self.finishReceivingMessage()
+            }else{
+                print("chat error \(error)")
             }
         }
     }
     
-    func downloadNewestMessagesFromSyncano() {
-        Message.please().giveMeDataObjectsWithCompletion { objects, error in
-            if let messages = objects as? [Message]! {
-                if (messages != nil) {
-                    self.messages = self.jsqMessagesFromSyncanoMessages(messages)
-                    print("\(self.messages.count) messages received")
-                    self.finishReceivingMessage()
-                } else {
-                    print("no message")
-                }
+    func doSendCommandToCattie(command:String){
+        print("doSendCommandToCattie 1")
+        messageManager.sendCmdWithCompletionBlock(command) {responseMessage, error in
+            if (error == nil) {
+                //self.messages.append(self.jsqMessageFromSyncanoMessage(message!))
+                self.messages.append(self.jsqMessageFromSyncanoMessage(responseMessage))
+                self.finishReceivingMessage()
+            }else{
+                print("chat error \(error)")
             }
+        }
+    }
+    
+    //todo: save msg to internal storage , and display it when logged in
+    func retriveMessagesFromStorage() {
+        let messages:[Message] = messageManager.getAllMessages()
+        print("messages count: \(messages.count)")
+        if(messages.count > 0){
+            self.messages = self.jsqMessagesFromSyncanoMessages(messages)
+            self.finishReceivingMessage()
         }
     }
     
     func jsqMessageFromSyncanoMessage(message:Message)->JSQMessage{
-        let jsqMessage = JSQMessage(senderId: message.senderId, senderDisplayName: message.senderId, date: message.created_at, text: message.text)
+        let jsqMessage = JSQMessage(senderId: message.senderid, senderDisplayName: message.senderid, date: message.create_at, text: message.text)
         return jsqMessage
     }
     
@@ -163,103 +237,29 @@ extension ViewController {
     
 }
 
-extension ViewController : SCChannelDelegate {
+
+extension ViewController {
     
-    func addMessageFromNotification(notification:SCChannelNotificationMessage){
-        print("add")
-        let message = Message(fromDictionary: notification.payload!)
-        
-        if message?.senderId == self.senderId {
-            return
-        }
- 
-        self.messages.append(self.jsqMessageFromSyncanoMessage(message!))
-        self.finishReceivingMessage()
+    func beginChat(finished: (Bool) -> ()){
+        print("beginChat")
+        let uid = UIDevice.currentDevice().identifierForVendor!.UUIDString
+        CTUser.startChatSession(uid, finished: finished)
+    }
+}
+
+extension ViewController {
+    
+    func initTimer(){
+        NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: #selector(self.timerAction), userInfo: nil, repeats: true)
     }
     
-    func updateMessageFromNofication(notification:SCChannelNotificationMessage){
-        
+    func timerAction(){
+        print(NSDate())
     }
     
-    func deleteMessageFromNotification(notification:SCChannelNotificationMessage){
-        
-    }
-    
-    func channelDidReceiveNotificationMessage(notificationMessage: SCChannelNotificationMessage) {
-        print("receive notification message")
-        switch(notificationMessage.action){
-        case .Create:
-            self.addMessageFromNotification(notificationMessage)
-        case .Delete:
-            self.deleteMessageFromNotification(notificationMessage)
-        case .Update:
-            self.updateMessageFromNofication(notificationMessage)
-        default:
-            break
-        }
-    }
     
 }
 
-extension ViewController:LoginDelegate{
-    func prepareAppForNewUser() {
-        self.setupSenderData()
-        self.reloadAllMessages()
-    }
-    
-    func reloadAllMessages() {
-        self.messages = []
-        self.reloadMessageView()
-        self.downloadNewestMessagesFromSyncano()
-    }
-    
-    func didSignUp() {
-        self.prepareAppForNewUser()
-        self.hideLoginViewController()
-    }
-    
-    func didLogin() {
-        self.prepareAppForNewUser()
-        self.hideLoginViewController()
-    }
-    
-    func isLoggedIn() -> Bool {
-        let isLoggedIn = (SCUser.currentUser() != nil)
-        return isLoggedIn
-    }
-    
-    func hideLoginViewController() {
-        self.dismissViewControllerAnimated(true){
-            
-        }
-    }
-    
-    func showLoginViewController() {
-        self.presentViewController(self.loginViewController, animated: true){
-            
-        }
-    }
-    
-    func showLoginViewControllerIfNotLoggedIn() {
-        if(self.isLoggedIn() == false){
-            self.showLoginViewController()
-        }
-    }
-    
-    func logout() {
-        SCUser.currentUser()?.logout()
-    }
-    
-    /*
-    @IBAction func logoutPressed(sender: UIBarButtonItem) {
-    }
-     */
-    
-    @IBAction func logoutPressed(sender: UIBarButtonItem){
-        self.logout()
-        self.showLoginViewControllerIfNotLoggedIn()
-    }
-}
 
 
 

@@ -4,11 +4,11 @@ platform :ios, '9.3'
 use_frameworks!
 
 target 'SyncanoChat' do
-pod 'syncano-ios'
 pod 'JSQMessagesViewController'
 pod 'IQKeyboardManagerSwift'
 pod 'AFNetworking'
 pod 'Alamofire'
+pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 
 end
 

@@ -15,44 +15,36 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - Alamofire (3.4.1)
-  - FMDB (2.6):
-    - FMDB/standard (= 2.6)
-  - FMDB/standard (2.6)
-  - FMDBMigrationManager (1.4.1):
-    - FMDBMigrationManager/System (= 1.4.1)
-  - FMDBMigrationManager/System (1.4.1):
-    - FMDB/standard (>= 2.3)
   - IQKeyboardManagerSwift (4.0.4)
   - JSQMessagesViewController (7.3.4):
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
-  - Mantle (2.0.7):
-    - Mantle/extobjc (= 2.0.7)
-  - Mantle/extobjc (2.0.7)
-  - syncano-ios (4.2.2):
-    - AFNetworking (= 3.1.0)
-    - FMDB (= 2.6)
-    - FMDBMigrationManager (= 1.4.1)
-    - Mantle (~> 2.0)
+  - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
   - AFNetworking
   - Alamofire
   - IQKeyboardManagerSwift
   - JSQMessagesViewController
-  - syncano-ios
+  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
+
+EXTERNAL SOURCES:
+  SwiftyJSON:
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+CHECKOUT OPTIONS:
+  SwiftyJSON:
+    :commit: 73670b94292b8d8496c398a973f56ac67789ba9f
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
-  FMDB: c1968bab3ab0aed38f66cb778ae1e7fa9a652b6e
-  FMDBMigrationManager: d52007f328ea0665e8985ca8a33500707aef084f
   IQKeyboardManagerSwift: e0964d04d6a29b71016fd346dca13ecb80a2823a
   JSQMessagesViewController: 39fed975e3c9f8eba7292071e29eeb541d105e66
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
-  Mantle: bc40bb061d8c2c6fb48d5083e04d928c3b7f73d9
-  syncano-ios: 07c30dfb2e53ac9c03e5c642456aed2d80d5d69c
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: 7516c6efbd40289e4951975fe3836997373722ff
+PODFILE CHECKSUM: 847d40b3943f36941ac97e3c84293bd794894121
 
 COCOAPODS: 1.0.1

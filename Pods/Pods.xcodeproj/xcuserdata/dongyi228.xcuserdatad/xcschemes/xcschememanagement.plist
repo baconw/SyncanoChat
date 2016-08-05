@@ -14,16 +14,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>FMDB.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>FMDBMigrationManager.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>IQKeyboardManagerSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -35,11 +25,6 @@
 			<false/>
 		</dict>
 		<key>JSQSystemSoundPlayer.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Mantle.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -59,7 +44,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>syncano-ios.xcscheme</key>
+		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -82,16 +67,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>23CF27B2BA6AC7125EFFEDA8C5AA819F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>45108D53551851559CB55A6D93887638</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>59CDDB315DD2B098E0CD9ED56B026F4B</key>
 		<dict>
 			<key>primary</key>
@@ -102,17 +77,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>814D7F0C846B4DCB10FE73B71013FF5D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>B2B142A5F7D7A5A50AE872C89C9AB69A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BF962B13E95DF2E0AA316EBFD0C3FAB5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,7 +87,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D3EFE93B8026D82F227B35D02E248E49</key>
+		<key>D414D168E522ADECD1676A8CDDB43135</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F93CF49B4F91F268A76F8E669D70C2E1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
