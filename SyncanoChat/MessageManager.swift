@@ -38,9 +38,9 @@ class MessageManager {
         return ms
     }
 
-    func sendMsgWithCompletionBlock(message:String, finished: (Message, NSError!) -> ()) {
+    func sendMsgWithCompletionBlock(message:String, username:String, finished: (Message, NSError!) -> ()) {
         let text = message
-        let params = ["msg":text]
+        let params = ["msg":text,"user":username]
         
         Alamofire.request(.POST, "https://" + SERVER_IP + ":" + SERVER_PORT + "/chat/sendMsg", parameters: params)
             .responseJSON{response in
@@ -71,9 +71,9 @@ class MessageManager {
         }
     }
     
-    func sendCmdWithCompletionBlock(cmd:String, finished: (Message, NSError!) -> ()) {
+    func sendCmdWithCompletionBlock(cmd:String, username:String, finished: (Message, NSError!) -> ()) {
         let text = cmd
-        let params = ["cmd":text]
+        let params = ["cmd":text,"user":username]
         
         Alamofire.request(.POST, "https://" + SERVER_IP + ":" + SERVER_PORT + "/chat/sendCmd", parameters: params)
             .responseJSON{response in

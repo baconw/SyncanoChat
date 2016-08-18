@@ -10,6 +10,7 @@ import UIKit
 import IQKeyboardManagerSwift
 import CoreData
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -23,6 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
         application.registerUserNotificationSettings(notificationSettings)
+        
+        let initString:String = "appid=57b13be9"
+        IFlySpeechUtility.createUtility(initString)
+        
         return true
     }
 

@@ -23,11 +23,16 @@ class ViewController: JSQMessagesViewController {
     
     var messages = [JSQMessage]()
     
+    var uid:String = UIDevice.currentDevice().identifierForVendor!.UUIDString
+    var iFlySpeechSynthesizer:IFlySpeechSynthesizer = IFlySpeechSynthesizer.sharedInstance()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.setup()
+        
+        self.setupIFly()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -158,8 +163,93 @@ extension ViewController {
         self.finishSendingMessage()
     }
     
-    override func didPressAccessoryButton(sender: UIButton!) {
+    
+    override func didPressAccessoryButton(sender: UIButton) {
+        self.inputToolbar.contentView!.textView!.resignFirstResponder()
         
+        let sheet = UIAlertController(title: "Media messages", message: nil, preferredStyle: .ActionSheet)
+        
+        let photoAction = UIAlertAction(title: "Send photo", style: .Default) { (action) in
+            /**
+             *  Create fake photo
+             */
+            let photoItem = JSQPhotoMediaItem(image: UIImage(named: "goldengate"))
+            self.addMedia(photoItem)
+        }
+        
+        let locationAction = UIAlertAction(title: "Send location", style: .Default) { (action) in
+            /**
+             *  Add fake location
+             */
+            let locationItem = self.buildLocationItem()
+            
+            self.addMedia(locationItem)
+        }
+        
+        let videoAction = UIAlertAction(title: "Send video", style: .Default) { (action) in
+            /**
+             *  Add fake video
+             */
+            let videoItem = self.buildVideoItem()
+            
+            self.addMedia(videoItem)
+        }
+        
+        let audioAction = UIAlertAction(title: "Send audio", style: .Default) { (action) in
+            /**
+             *  Add fake audio
+             */
+            let audioItem = self.buildAudioItem()
+            
+            self.addMedia(audioItem)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        
+        sheet.addAction(photoAction)
+        sheet.addAction(locationAction)
+        sheet.addAction(videoAction)
+        sheet.addAction(audioAction)
+        sheet.addAction(cancelAction)
+        
+        self.presentViewController(sheet, animated: true, completion: nil)
+    }
+    
+    func buildVideoItem() -> JSQVideoMediaItem {
+        let videoURL = NSURL(fileURLWithPath: "file://")
+        
+        let videoItem = JSQVideoMediaItem(fileURL: videoURL, isReadyToPlay: true)
+        
+        return videoItem
+    }
+    
+    func buildAudioItem() -> JSQAudioMediaItem {
+        let sample = NSBundle.mainBundle().pathForResource("jsq_messages_sample", ofType: "m4a")
+        let audioData = NSData(contentsOfFile: sample!)
+        
+        let audioItem = JSQAudioMediaItem(data: audioData)
+        
+        return audioItem
+    }
+    
+    func buildLocationItem() -> JSQLocationMediaItem {
+        let ferryBuildingInSF = CLLocation(latitude: 37.795313, longitude: -122.393757)
+        
+        let locationItem = JSQLocationMediaItem()
+        locationItem.setLocation(ferryBuildingInSF) {
+            self.collectionView!.reloadData()
+        }
+        
+        return locationItem
+    }
+    
+    func addMedia(media:JSQMediaItem) {
+        let message = JSQMessage(senderId: self.senderId, displayName: self.senderDisplayName, media: media)
+        self.messages.append(message)
+        
+        //Optional: play sent sound
+        
+        self.finishSendingMessageAnimated(true)
     }
     
     //syncano
@@ -187,10 +277,11 @@ extension ViewController {
     
     func doSendMessageToCattie(message:JSQMessage){
         print("doSendMessageToCattie 1")
-        messageManager.sendMsgWithCompletionBlock(message.text) {responseMessage, error in
+        messageManager.sendMsgWithCompletionBlock(message.text, username:uid) {responseMessage, error in
             if (error == nil) {
                 //self.messages.append(self.jsqMessageFromSyncanoMessage(message!))
                 self.messages.append(self.jsqMessageFromSyncanoMessage(responseMessage))
+                //self.iFlySpeechSynthesizer.startSpeaking(responseMessage.text)
                 self.finishReceivingMessage()
             }else{
                 print("chat error \(error)")
@@ -200,7 +291,7 @@ extension ViewController {
     
     func doSendCommandToCattie(command:String){
         print("doSendCommandToCattie 1")
-        messageManager.sendCmdWithCompletionBlock(command) {responseMessage, error in
+        messageManager.sendCmdWithCompletionBlock(command, username:uid) {responseMessage, error in
             if (error == nil) {
                 //self.messages.append(self.jsqMessageFromSyncanoMessage(message!))
                 self.messages.append(self.jsqMessageFromSyncanoMessage(responseMessage))
@@ -223,6 +314,7 @@ extension ViewController {
     
     func jsqMessageFromSyncanoMessage(message:Message)->JSQMessage{
         let jsqMessage = JSQMessage(senderId: message.senderid, senderDisplayName: message.senderid, date: message.create_at, text: message.text)
+        self.iFlySpeechSynthesizer.startSpeaking(message.text)
         return jsqMessage
     }
     
@@ -242,7 +334,7 @@ extension ViewController {
     
     func beginChat(finished: (Bool) -> ()){
         print("beginChat")
-        let uid = UIDevice.currentDevice().identifierForVendor!.UUIDString
+        //let uid = UIDevice.currentDevice().identifierForVendor!.UUIDString
         CTUser.startChatSession(uid, finished: finished)
     }
 }
@@ -256,8 +348,36 @@ extension ViewController {
     func timerAction(){
         print(NSDate())
     }
+}
+
+extension ViewController {
+    func setupIFly(){
+        iFlySpeechSynthesizer.delegate = self
+        iFlySpeechSynthesizer.setParameter(IFlySpeechConstant.TYPE_CLOUD(),forKey: IFlySpeechConstant.ENGINE_TYPE())
+        iFlySpeechSynthesizer.setParameter("50", forKey: IFlySpeechConstant.VOLUME())
+        iFlySpeechSynthesizer.setParameter("xiaoyan", forKey: IFlySpeechConstant.VOICE_NAME())
+        iFlySpeechSynthesizer.setParameter("tts.pcm", forKey: IFlySpeechConstant.TTS_AUDIO_PATH())
+        //iFlySpeechSynthesizer.startSpeaking("你好，我是科大讯飞的小燕")
+        
+    }
+}
+
+extension ViewController:IFlySpeechSynthesizerDelegate {
+    func onCompleted(error: IFlySpeechError!) {
+        print("onCompleted")
+    }
     
+    func onSpeakBegin() {
+        print("onSpeakBegin")
+    }
     
+    func onBufferProgress(progress: Int32, message msg: String!) {
+        print("onBufferProgress")
+    }
+    
+    func onSpeakProgress(progress: Int32, beginPos: Int32, endPos: Int32) {
+        
+    }
 }
 
 

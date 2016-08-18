@@ -5,3 +5,4 @@
 //#import <Syncano.h>
 #import <JSQMessagesViewController/JSQMessages.h>
 #import <AFNetworking/AFNetworking.h>
+#import <iflyMSC/IFlyMSC.h>

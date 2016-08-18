@@ -125,6 +125,7 @@
 		989EE4ED1C86991E81339AF1CBF3654A /* IQUIView+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB748277D32B2EBCF21B8938DFCFD76 /* IQUIView+Hierarchy.swift */; };
 		991D626EB53A52CA3F4CD908461695CB /* UIDevice+JSQMessages.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D0CB1252B6BC5FFEF44AA739FE5A32 /* UIDevice+JSQMessages.m */; };
 		9E1E90DED74B73ECE53C9AD76DE53E2D /* UIImage+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = A835F3C2048D49E4908E87CEBA38BE9F /* UIImage+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9EBE5C7E1D62F385003893B5 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBE5C7D1D62F385003893B5 /* iflyMSC.framework */; };
 		9F6B2EB176C724D49E9242F6746A4695 /* UIDevice+JSQMessages.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C7E0B17B726B1A5658943907C0CFBBC /* UIDevice+JSQMessages.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A0286C8818D22F9233D55D3DB2589F33 /* JSQMessagesLoadEarlierHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 53D0B5754390C18A29B002443B7B9519 /* JSQMessagesLoadEarlierHeaderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A028AE29774925ACF0F02107D8D0B21B /* JSQVideoMediaItem.h in Headers */ = {isa = PBXBuildFile; fileRef = C2588CF6A676B13486A4D20038B3B454 /* JSQVideoMediaItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -415,6 +416,7 @@
 		9A5073AD9399CC752A1AE94C4F93A0C8 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C17CAD05670F3CFA7CCD62800A90E69 /* JSQMessagesAvatarImageFactory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQMessagesAvatarImageFactory.m; path = JSQMessagesViewController/Factories/JSQMessagesAvatarImageFactory.m; sourceTree = "<group>"; };
 		9E0684268CE4612C295F36D111B77198 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
+		9EBE5C7D1D62F385003893B5 /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iflyMSC.framework; sourceTree = "<group>"; };
 		9F2AA029F75BDF4A96C90B9FD7F57292 /* JSQSystemSoundPlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQSystemSoundPlayer.h; path = JSQSystemSoundPlayer/Classes/JSQSystemSoundPlayer.h; sourceTree = "<group>"; };
 		9F51E652E955004CB0060EC97BD0DFC3 /* JSQMessagesTimestampFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQMessagesTimestampFormatter.m; path = JSQMessagesViewController/Factories/JSQMessagesTimestampFormatter.m; sourceTree = "<group>"; };
 		9F5D9C480114596863ECD516FAF38A84 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -592,6 +594,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EBE5C7E1D62F385003893B5 /* iflyMSC.framework in Frameworks */,
 				DB5CD215C3551D27251B3B5F9009CB92 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -767,6 +770,7 @@
 		727C8DB340BA02B3BA4D1F24D7638479 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				9EBE5C7C1D62F385003893B5 /* lib */,
 				9A70EFAE73869FA2151743789F99A228 /* Pods-SyncanoChat */,
 				3139B4C4CE694F0C2D22113AF7152879 /* Pods-SyncanoChatTests */,
 				5A837A94E49E2C6124C425A69DF132AD /* Pods-SyncanoChatUITests */,
@@ -914,6 +918,14 @@
 			);
 			name = "Pods-SyncanoChat";
 			path = "Target Support Files/Pods-SyncanoChat";
+			sourceTree = "<group>";
+		};
+		9EBE5C7C1D62F385003893B5 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				9EBE5C7D1D62F385003893B5 /* iflyMSC.framework */,
+			);
+			path = lib;
 			sourceTree = "<group>";
 		};
 		A0E0D86D67B34F7135FC62D062A361D3 /* Resources */ = {
@@ -2029,6 +2041,10 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-SyncanoChat/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -2184,6 +2200,10 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-SyncanoChat/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";

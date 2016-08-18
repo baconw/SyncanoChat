@@ -35,6 +35,31 @@
 		9EBE5C441D4B3B78003893B5 /* Message.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9EBE5C421D4B3B78003893B5 /* Message.xcdatamodeld */; };
 		9EBE5C4F1D4B422D003893B5 /* Message+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBE5C4D1D4B422D003893B5 /* Message+CoreDataProperties.swift */; };
 		9EBE5C501D4B422D003893B5 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBE5C4E1D4B422D003893B5 /* Message.swift */; };
+		9EBE5C551D61A983003893B5 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBE5C531D61A856003893B5 /* iflyMSC.framework */; };
+		9EBE5C571D61A9E8003893B5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBE5C561D61A9E8003893B5 /* AVFoundation.framework */; };
+		9EBE5C591D61A9F8003893B5 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBE5C581D61A9F8003893B5 /* libz.tbd */; };
+		9EBE5C5B1D61AA04003893B5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBE5C5A1D61AA04003893B5 /* SystemConfiguration.framework */; };
+		9EBE5C5D1D61AA0E003893B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBE5C5C1D61AA0E003893B5 /* Foundation.framework */; };
+		9EBE5C5F1D61AA17003893B5 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBE5C5E1D61AA17003893B5 /* CoreTelephony.framework */; };
+		9EBE5C611D61AA24003893B5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBE5C601D61AA24003893B5 /* AudioToolbox.framework */; };
+		9EBE5C631D61AA2C003893B5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBE5C621D61AA2C003893B5 /* UIKit.framework */; };
+		9EBE5C651D61AA34003893B5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBE5C641D61AA34003893B5 /* CoreLocation.framework */; };
+		9EBE5C671D61AA3C003893B5 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBE5C661D61AA3C003893B5 /* AddressBook.framework */; };
+		9EBE5C691D61AA44003893B5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBE5C681D61AA44003893B5 /* QuartzCore.framework */; };
+		9EBE5C6B1D61AA4A003893B5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBE5C6A1D61AA4A003893B5 /* CoreGraphics.framework */; };
+		9EBE5C6C1D61BB11003893B5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBE5C6A1D61AA4A003893B5 /* CoreGraphics.framework */; };
+		9EBE5C6D1D61BB14003893B5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBE5C681D61AA44003893B5 /* QuartzCore.framework */; };
+		9EBE5C6E1D61BB17003893B5 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBE5C661D61AA3C003893B5 /* AddressBook.framework */; };
+		9EBE5C6F1D61BB1B003893B5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBE5C641D61AA34003893B5 /* CoreLocation.framework */; };
+		9EBE5C701D61BB1E003893B5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBE5C621D61AA2C003893B5 /* UIKit.framework */; };
+		9EBE5C711D61BB24003893B5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBE5C601D61AA24003893B5 /* AudioToolbox.framework */; };
+		9EBE5C721D61BB27003893B5 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBE5C5E1D61AA17003893B5 /* CoreTelephony.framework */; };
+		9EBE5C731D61BB2A003893B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBE5C5C1D61AA0E003893B5 /* Foundation.framework */; };
+		9EBE5C741D61BB2D003893B5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBE5C5A1D61AA04003893B5 /* SystemConfiguration.framework */; };
+		9EBE5C751D61BB30003893B5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBE5C561D61A9E8003893B5 /* AVFoundation.framework */; };
+		9EBE5C761D61BB38003893B5 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBE5C581D61A9F8003893B5 /* libz.tbd */; };
+		9EBE5C7B1D61BBDF003893B5 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBE5C7A1D61BBDF003893B5 /* iflyMSC.framework */; };
+		9EBE5C811D62F3A0003893B5 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBE5C801D62F3A0003893B5 /* iflyMSC.framework */; };
 		9EE5E3D01D43089E00E93B48 /* RequestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE5E3CF1D43089E00E93B48 /* RequestClient.swift */; };
 		B9643A26B4CF3890B7EEF96B /* Pods_SyncanoChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F698D68ABA680E610B0F13 /* Pods_SyncanoChat.framework */; };
 /* End PBXBuildFile section */
@@ -94,6 +119,21 @@
 		9EBE5C431D4B3B78003893B5 /* Message.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Message.xcdatamodel; sourceTree = "<group>"; };
 		9EBE5C4D1D4B422D003893B5 /* Message+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Message+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9EBE5C4E1D4B422D003893B5 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		9EBE5C531D61A856003893B5 /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iflyMSC.framework; path = ../../../../Volumes/BaiduYunDownload/iOS_voice_1135_57b13be9/lib/iflyMSC.framework; sourceTree = "<group>"; };
+		9EBE5C561D61A9E8003893B5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9EBE5C581D61A9F8003893B5 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		9EBE5C5A1D61AA04003893B5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9EBE5C5C1D61AA0E003893B5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9EBE5C5E1D61AA17003893B5 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		9EBE5C601D61AA24003893B5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		9EBE5C621D61AA2C003893B5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9EBE5C641D61AA34003893B5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9EBE5C661D61AA3C003893B5 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		9EBE5C681D61AA44003893B5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9EBE5C6A1D61AA4A003893B5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9EBE5C781D61BBCD003893B5 /* iOS_voice_1135_57b13be9 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iOS_voice_1135_57b13be9; path = ../iOS_voice_1135_57b13be9; sourceTree = "<group>"; };
+		9EBE5C7A1D61BBDF003893B5 /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iflyMSC.framework; path = ../iOS_voice_1135_57b13be9/lib/iflyMSC.framework; sourceTree = "<group>"; };
+		9EBE5C801D62F3A0003893B5 /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iflyMSC.framework; sourceTree = "<group>"; };
 		9EE5E3CF1D43089E00E93B48 /* RequestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestClient.swift; sourceTree = "<group>"; };
 		A1563F8212C26F7ABDD13E2A /* Pods_SyncanoChatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SyncanoChatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF7BB64500FBDF7035B2F8F /* Pods-SyncanoChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SyncanoChatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SyncanoChatTests/Pods-SyncanoChatTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -107,8 +147,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EBE5C7B1D61BBDF003893B5 /* iflyMSC.framework in Frameworks */,
+				9EBE5C751D61BB30003893B5 /* AVFoundation.framework in Frameworks */,
+				9EBE5C731D61BB2A003893B5 /* Foundation.framework in Frameworks */,
+				9EBE5C811D62F3A0003893B5 /* iflyMSC.framework in Frameworks */,
+				9EBE5C721D61BB27003893B5 /* CoreTelephony.framework in Frameworks */,
+				9EBE5C711D61BB24003893B5 /* AudioToolbox.framework in Frameworks */,
+				9EBE5C701D61BB1E003893B5 /* UIKit.framework in Frameworks */,
+				9EBE5C6E1D61BB17003893B5 /* AddressBook.framework in Frameworks */,
 				9EBE5C201D4B36E4003893B5 /* CoreData.framework in Frameworks */,
 				B9643A26B4CF3890B7EEF96B /* Pods_SyncanoChat.framework in Frameworks */,
+				9EBE5C6C1D61BB11003893B5 /* CoreGraphics.framework in Frameworks */,
+				9EBE5C6D1D61BB14003893B5 /* QuartzCore.framework in Frameworks */,
+				9EBE5C6F1D61BB1B003893B5 /* CoreLocation.framework in Frameworks */,
+				9EBE5C741D61BB2D003893B5 /* SystemConfiguration.framework in Frameworks */,
+				9EBE5C761D61BB38003893B5 /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +177,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EBE5C6B1D61AA4A003893B5 /* CoreGraphics.framework in Frameworks */,
+				9EBE5C691D61AA44003893B5 /* QuartzCore.framework in Frameworks */,
+				9EBE5C671D61AA3C003893B5 /* AddressBook.framework in Frameworks */,
+				9EBE5C651D61AA34003893B5 /* CoreLocation.framework in Frameworks */,
+				9EBE5C631D61AA2C003893B5 /* UIKit.framework in Frameworks */,
+				9EBE5C611D61AA24003893B5 /* AudioToolbox.framework in Frameworks */,
+				9EBE5C5F1D61AA17003893B5 /* CoreTelephony.framework in Frameworks */,
+				9EBE5C5D1D61AA0E003893B5 /* Foundation.framework in Frameworks */,
+				9EBE5C5B1D61AA04003893B5 /* SystemConfiguration.framework in Frameworks */,
+				9EBE5C591D61A9F8003893B5 /* libz.tbd in Frameworks */,
+				9EBE5C571D61A9E8003893B5 /* AVFoundation.framework in Frameworks */,
+				9EBE5C551D61A983003893B5 /* iflyMSC.framework in Frameworks */,
 				535B4AFFBFB15F999248891E /* Pods_SyncanoChatUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,6 +212,20 @@
 		9583BB832A01A452619A104A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9EBE5C7A1D61BBDF003893B5 /* iflyMSC.framework */,
+				9EBE5C781D61BBCD003893B5 /* iOS_voice_1135_57b13be9 */,
+				9EBE5C6A1D61AA4A003893B5 /* CoreGraphics.framework */,
+				9EBE5C681D61AA44003893B5 /* QuartzCore.framework */,
+				9EBE5C661D61AA3C003893B5 /* AddressBook.framework */,
+				9EBE5C641D61AA34003893B5 /* CoreLocation.framework */,
+				9EBE5C621D61AA2C003893B5 /* UIKit.framework */,
+				9EBE5C601D61AA24003893B5 /* AudioToolbox.framework */,
+				9EBE5C5E1D61AA17003893B5 /* CoreTelephony.framework */,
+				9EBE5C5C1D61AA0E003893B5 /* Foundation.framework */,
+				9EBE5C5A1D61AA04003893B5 /* SystemConfiguration.framework */,
+				9EBE5C581D61A9F8003893B5 /* libz.tbd */,
+				9EBE5C561D61A9E8003893B5 /* AVFoundation.framework */,
+				9EBE5C531D61A856003893B5 /* iflyMSC.framework */,
 				9EBE5C1F1D4B36E4003893B5 /* CoreData.framework */,
 				E6F698D68ABA680E610B0F13 /* Pods_SyncanoChat.framework */,
 				B6B97F75C65A2B23C5467DBC /* Pods_SyncanoChatTests.framework */,
@@ -158,6 +237,7 @@
 		9E6C2CF11D3F6474006640B3 = {
 			isa = PBXGroup;
 			children = (
+				9EBE5C7F1D62F3A0003893B5 /* lib */,
 				9EBC73521D47094C0056ACC3 /* server.cer */,
 				9EBC73531D47094C0056ACC3 /* server.pfx */,
 				9EBC734E1D4603C60056ACC3 /* WPD.cer */,
@@ -226,6 +306,14 @@
 				9E6C2D1F1D3F6474006640B3 /* Info.plist */,
 			);
 			path = SyncanoChatUITests;
+			sourceTree = "<group>";
+		};
+		9EBE5C7F1D62F3A0003893B5 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				9EBE5C801D62F3A0003893B5 /* iflyMSC.framework */,
+			);
+			path = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -607,6 +695,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -644,6 +733,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -652,14 +742,23 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4FFDFD791AB40B794F97157D /* Pods-SyncanoChat.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+					"$(SRCROOT)/lib",
+				);
 				INFOPLIST_FILE = SyncanoChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wpd.game.SyncanoChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SyncanoChat/SyncanoChat-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -667,13 +766,22 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9EBBAD1A03BC40ED4BF2CB39 /* Pods-SyncanoChat.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+					"$(SRCROOT)/lib",
+				);
 				INFOPLIST_FILE = SyncanoChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wpd.game.SyncanoChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SyncanoChat/SyncanoChat-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};

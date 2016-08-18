@@ -18,7 +18,8 @@ public enum CTChannelNotificationMessageAction : UInt {
     case Delete
 }
 
-public var SERVER_IP = "192.168.3.2"
+public var SERVER_IP = "104.200.21.219"
+//public var SERVER_IP = "192.168.3.2"
 public var SERVER_PORT = "3000"
 
 public var SERVER_NOT_RESPONSE = "服务器挂了，努力抢救中"
