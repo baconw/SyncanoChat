@@ -60,6 +60,19 @@
 		9EBE5C761D61BB38003893B5 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBE5C581D61A9F8003893B5 /* libz.tbd */; };
 		9EBE5C7B1D61BBDF003893B5 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBE5C7A1D61BBDF003893B5 /* iflyMSC.framework */; };
 		9EBE5C811D62F3A0003893B5 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBE5C801D62F3A0003893B5 /* iflyMSC.framework */; };
+		9EBE5C8A1D742730003893B5 /* luguhu.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9EBE5C831D742730003893B5 /* luguhu.jpeg */; };
+		9EBE5C8B1D742730003893B5 /* mebubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EBE5C841D742730003893B5 /* mebubble.png */; };
+		9EBE5C8C1D742730003893B5 /* mebubble@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EBE5C851D742730003893B5 /* mebubble@2x.png */; };
+		9EBE5C8D1D742730003893B5 /* xiaohua.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EBE5C861D742730003893B5 /* xiaohua.png */; };
+		9EBE5C8E1D742730003893B5 /* xiaoming.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EBE5C871D742730003893B5 /* xiaoming.png */; };
+		9EBE5C8F1D742730003893B5 /* yoububble.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EBE5C881D742730003893B5 /* yoububble.png */; };
+		9EBE5C901D742730003893B5 /* yoububble@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EBE5C891D742730003893B5 /* yoububble@2x.png */; };
+		9EBE5C951D742745003893B5 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBE5C921D742745003893B5 /* TableView.swift */; };
+		9EBE5C961D742745003893B5 /* TableHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBE5C931D742745003893B5 /* TableHeaderViewCell.swift */; };
+		9EBE5C971D742745003893B5 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBE5C941D742745003893B5 /* TableViewCell.swift */; };
+		9EBE5C9C1D742758003893B5 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBE5C991D742758003893B5 /* UserInfo.swift */; };
+		9EBE5C9D1D742758003893B5 /* ChatDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBE5C9A1D742758003893B5 /* ChatDataSource.swift */; };
+		9EBE5C9E1D742758003893B5 /* MessageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBE5C9B1D742758003893B5 /* MessageItem.swift */; };
 		9EE5E3D01D43089E00E93B48 /* RequestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE5E3CF1D43089E00E93B48 /* RequestClient.swift */; };
 		B9643A26B4CF3890B7EEF96B /* Pods_SyncanoChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F698D68ABA680E610B0F13 /* Pods_SyncanoChat.framework */; };
 /* End PBXBuildFile section */
@@ -134,6 +147,19 @@
 		9EBE5C781D61BBCD003893B5 /* iOS_voice_1135_57b13be9 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iOS_voice_1135_57b13be9; path = ../iOS_voice_1135_57b13be9; sourceTree = "<group>"; };
 		9EBE5C7A1D61BBDF003893B5 /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iflyMSC.framework; path = ../iOS_voice_1135_57b13be9/lib/iflyMSC.framework; sourceTree = "<group>"; };
 		9EBE5C801D62F3A0003893B5 /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iflyMSC.framework; sourceTree = "<group>"; };
+		9EBE5C831D742730003893B5 /* luguhu.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = luguhu.jpeg; sourceTree = "<group>"; };
+		9EBE5C841D742730003893B5 /* mebubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mebubble.png; sourceTree = "<group>"; };
+		9EBE5C851D742730003893B5 /* mebubble@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mebubble@2x.png"; sourceTree = "<group>"; };
+		9EBE5C861D742730003893B5 /* xiaohua.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xiaohua.png; sourceTree = "<group>"; };
+		9EBE5C871D742730003893B5 /* xiaoming.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xiaoming.png; sourceTree = "<group>"; };
+		9EBE5C881D742730003893B5 /* yoububble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yoububble.png; sourceTree = "<group>"; };
+		9EBE5C891D742730003893B5 /* yoububble@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yoububble@2x.png"; sourceTree = "<group>"; };
+		9EBE5C921D742745003893B5 /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		9EBE5C931D742745003893B5 /* TableHeaderViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableHeaderViewCell.swift; sourceTree = "<group>"; };
+		9EBE5C941D742745003893B5 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		9EBE5C991D742758003893B5 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		9EBE5C9A1D742758003893B5 /* ChatDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatDataSource.swift; sourceTree = "<group>"; };
+		9EBE5C9B1D742758003893B5 /* MessageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageItem.swift; sourceTree = "<group>"; };
 		9EE5E3CF1D43089E00E93B48 /* RequestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestClient.swift; sourceTree = "<group>"; };
 		A1563F8212C26F7ABDD13E2A /* Pods_SyncanoChatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SyncanoChatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF7BB64500FBDF7035B2F8F /* Pods-SyncanoChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SyncanoChatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SyncanoChatTests/Pods-SyncanoChatTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -265,6 +291,9 @@
 		9E6C2CFC1D3F6474006640B3 /* SyncanoChat */ = {
 			isa = PBXGroup;
 			children = (
+				9EBE5C981D742749003893B5 /* model */,
+				9EBE5C911D742739003893B5 /* view */,
+				9EBE5C821D742718003893B5 /* images */,
 				9EBE5C4D1D4B422D003893B5 /* Message+CoreDataProperties.swift */,
 				9EBE5C4E1D4B422D003893B5 /* Message.swift */,
 				9E6C2CFD1D3F6474006640B3 /* AppDelegate.swift */,
@@ -314,6 +343,40 @@
 				9EBE5C801D62F3A0003893B5 /* iflyMSC.framework */,
 			);
 			path = lib;
+			sourceTree = "<group>";
+		};
+		9EBE5C821D742718003893B5 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				9EBE5C831D742730003893B5 /* luguhu.jpeg */,
+				9EBE5C841D742730003893B5 /* mebubble.png */,
+				9EBE5C851D742730003893B5 /* mebubble@2x.png */,
+				9EBE5C861D742730003893B5 /* xiaohua.png */,
+				9EBE5C871D742730003893B5 /* xiaoming.png */,
+				9EBE5C881D742730003893B5 /* yoububble.png */,
+				9EBE5C891D742730003893B5 /* yoububble@2x.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		9EBE5C911D742739003893B5 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				9EBE5C921D742745003893B5 /* TableView.swift */,
+				9EBE5C931D742745003893B5 /* TableHeaderViewCell.swift */,
+				9EBE5C941D742745003893B5 /* TableViewCell.swift */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		9EBE5C981D742749003893B5 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				9EBE5C991D742758003893B5 /* UserInfo.swift */,
+				9EBE5C9A1D742758003893B5 /* ChatDataSource.swift */,
+				9EBE5C9B1D742758003893B5 /* MessageItem.swift */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,12 +492,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EBC73541D47094C0056ACC3 /* server.cer in Resources */,
+				9EBE5C8D1D742730003893B5 /* xiaohua.png in Resources */,
+				9EBE5C8E1D742730003893B5 /* xiaoming.png in Resources */,
+				9EBE5C8F1D742730003893B5 /* yoububble.png in Resources */,
 				9EBC73511D4606510056ACC3 /* client.p12 in Resources */,
+				9EBE5C8C1D742730003893B5 /* mebubble@2x.png in Resources */,
 				9E6C2D081D3F6474006640B3 /* LaunchScreen.storyboard in Resources */,
+				9EBE5C8A1D742730003893B5 /* luguhu.jpeg in Resources */,
 				9E6C2D051D3F6474006640B3 /* Assets.xcassets in Resources */,
 				9E6C2D2C1D3F64DF006640B3 /* Podfile in Resources */,
 				9EBC73551D47094C0056ACC3 /* server.pfx in Resources */,
+				9EBE5C8B1D742730003893B5 /* mebubble.png in Resources */,
 				9E6C2D031D3F6474006640B3 /* Main.storyboard in Resources */,
+				9EBE5C901D742730003893B5 /* yoububble@2x.png in Resources */,
 				9EBC734F1D4603C60056ACC3 /* WPD.cer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -587,17 +657,23 @@
 				9E0A5DA51D489440000892A5 /* Constants.swift in Sources */,
 				9E6C2D001D3F6474006640B3 /* ViewController.swift in Sources */,
 				9EBE5C441D4B3B78003893B5 /* Message.xcdatamodeld in Sources */,
+				9EBE5C971D742745003893B5 /* TableViewCell.swift in Sources */,
 				9EE5E3D01D43089E00E93B48 /* RequestClient.swift in Sources */,
 				9E6C2D331D41C77B006640B3 /* Settings.swift in Sources */,
 				9E6C2D351D41C916006640B3 /* CertificateManager.swift in Sources */,
+				9EBE5C9C1D742758003893B5 /* UserInfo.swift in Sources */,
 				9E0A5D9F1D488D21000892A5 /* CTUser.swift in Sources */,
+				9EBE5C961D742745003893B5 /* TableHeaderViewCell.swift in Sources */,
 				9EBE5C4F1D4B422D003893B5 /* Message+CoreDataProperties.swift in Sources */,
 				9EBC734D1D430BDE0056ACC3 /* RequestAPI.swift in Sources */,
 				9E0A5DA11D489387000892A5 /* CTChannelDelegate.swift in Sources */,
 				9E0A5DAB1D48AA39000892A5 /* CTPlease.swift in Sources */,
+				9EBE5C951D742745003893B5 /* TableView.swift in Sources */,
+				9EBE5C9D1D742758003893B5 /* ChatDataSource.swift in Sources */,
 				9E6C2CFE1D3F6474006640B3 /* AppDelegate.swift in Sources */,
 				9EBE5C501D4B422D003893B5 /* Message.swift in Sources */,
 				9E0A5DA71D4894D1000892A5 /* CTChannel.swift in Sources */,
+				9EBE5C9E1D742758003893B5 /* MessageItem.swift in Sources */,
 				9E0A5DA31D4893F4000892A5 /* CTChannelNotificationMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
