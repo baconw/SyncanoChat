@@ -7,13 +7,14 @@
 //
 
 import UIKit
-import JSQMessagesViewController
 
 class ViewController: UIViewController, ChatDataSource,UITextFieldDelegate {
     
     var messageManager = MessageManager()
+    /*
     let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor(red: 10/255, green: 180/255, blue: 230/255, alpha: 1.0))
     let outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(UIColor.lightGrayColor())
+    */
     
     //let loginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier(loginViewControllerIdentifier) as! LoginViewController
     
@@ -21,7 +22,7 @@ class ViewController: UIViewController, ChatDataSource,UITextFieldDelegate {
     //let channel = SCChannel(name: syncanoChannelName)
     let channel = CTChannel(name: syncanoChannelName)
     
-    var messages = [JSQMessage]()
+    //var messages = [JSQMessage]()
     
     var uid:String = UIDevice.currentDevice().identifierForVendor!.UUIDString
     var iFlySpeechSynthesizer:IFlySpeechSynthesizer = IFlySpeechSynthesizer.sharedInstance()
@@ -192,7 +193,7 @@ extension ViewController {
     }
     
     func reloadAllMessages() {
-        self.messages = []
+        //self.messages = []
         self.reloadMessageView()
         //huangge self.retriveMessagesFromStorage()
     }
