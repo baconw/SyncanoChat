@@ -11,9 +11,12 @@ class MessageItem
     var user:UserInfo
     var date:NSDate
     var mtype:ChatType
+    
     var view:UIView
     var insets:UIEdgeInsets
     
+    var text:NSString
+    var image:UIImage
     
     class func getTextInsetsMine() -> UIEdgeInsets
     {

@@ -29,6 +29,11 @@ class TableViewCell:UITableViewCell
         }
         
         let type =  self.msgItem.mtype
+        
+        //for text
+        let width =  225, height = 10000.0
+        let size =  msgItem..boundingRectWithSize(CGSizeMake(CGFloat(width), CGFloat(height))  ,     options:NSStringDrawingOptions.UsesLineFragmentOrigin, attributes:atts ,     context:nil)
+        
         let width =  self.msgItem.view.frame.size.width
         let height =  self.msgItem.view.frame.size.height
         

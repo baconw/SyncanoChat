@@ -107,6 +107,19 @@ class ViewController: UIViewController, ChatDataSource,UITextFieldDelegate {
         
         //创建一个重用的单元格
         self.tableView!.registerClass(TableViewCell.self, forCellReuseIdentifier: "ChatCell")
+        
+        loadMsgs()
+        
+        //set the chatDataSource
+        self.tableView.chatDataSource = self
+        
+        //call the reloadData, this is actually calling your override method
+        self.tableView.reloadData()
+        
+        self.view.addSubview(self.tableView)
+    }
+    
+    func loadMsgs(){
         me = UserInfo(name:"Xiaoming" ,logo:("xiaoming.png"))
         you  = UserInfo(name:"Xiaohua", logo:("xiaohua.png"))
         
@@ -127,14 +140,6 @@ class ViewController: UIViewController, ChatDataSource,UITextFieldDelegate {
         
         Chats = NSMutableArray()
         Chats.addObjectsFromArray([first,second, third, fouth, fifth, zero, zero1])
-        
-        //set the chatDataSource
-        self.tableView.chatDataSource = self
-        
-        //call the reloadData, this is actually calling your override method
-        self.tableView.reloadData()
-        
-        self.view.addSubview(self.tableView)
     }
     
     func rowsForChatTable(tableView:TableView) -> Int
@@ -349,12 +354,13 @@ extension ViewController {
         
         self.finishSendingMessageAnimated(true)
     }
-    
+    */
+    /*
     //syncano
-    func sendMessageToCattie(message:JSQMessage){
+    func sendMessageToCattie(message:MessageItem){
         print("sendMessageToCattie 1")
         
-        messageManager.saveMessage(message.text, sender: self.senderId)
+        messageManager.saveMessage(message, sender: self.senderId)
         
         if(CTUser.isServerRunning){
             self.doSendMessageToCattie(message)
@@ -373,7 +379,7 @@ extension ViewController {
         }
     }
     
-    func doSendMessageToCattie(message:JSQMessage){
+    func doSendMessageToCattie(message:MessageItem){
         print("doSendMessageToCattie 1")
         messageManager.sendMsgWithCompletionBlock(message.text, username:uid) {responseMessage, error in
             if (error == nil) {
@@ -409,7 +415,9 @@ extension ViewController {
             self.finishReceivingMessage()
         }
     }
+ */
     
+     /*
     func jsqMessageFromSyncanoMessage(message:Message)->JSQMessage{
         let jsqMessage = JSQMessage(senderId: message.senderid, senderDisplayName: message.senderid, date: message.create_at, text: message.text)
         self.iFlySpeechSynthesizer.startSpeaking(message.text)
