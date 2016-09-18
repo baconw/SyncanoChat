@@ -49,10 +49,13 @@ class TableView:UITableView,UITableViewDelegate, UITableViewDataSource
     
     override func reloadData()
     {
+        print("reloadData 1")
         self.showsVerticalScrollIndicator = false
         self.showsHorizontalScrollIndicator = false
         self.bubbleSection = NSMutableArray()
         var count =  0
+        
+        print("reloadData 2")
         if ((self.chatDataSource != nil))
         {
             count = self.chatDataSource.rowsForChatTable(self)
@@ -92,13 +95,23 @@ class TableView:UITableView,UITableViewDelegate, UITableViewDataSource
                 }
             }
         }
+        
+        print("reloadData 2")
+        
         super.reloadData()
         
+        print("reloadData 3")
         //滑向最后一部分
-        let secno = self.bubbleSection.count - 1
-        let indexPath =  NSIndexPath(forRow:self.bubbleSection[secno].count,inSection:secno)
+        if(self.bubbleSection.count > 0){
+            let secno = self.bubbleSection.count - 1
+            let indexPath =  NSIndexPath(forRow:self.bubbleSection[secno].count,inSection:secno)
         
-        self.scrollToRowAtIndexPath(indexPath,                atScrollPosition:UITableViewScrollPosition.Bottom,animated:true)
+            print("reloadData 4")
+        
+            self.scrollToRowAtIndexPath(indexPath,                atScrollPosition:UITableViewScrollPosition.Bottom,animated:true)
+        }
+        
+        print("reloadData 5")
     }
     
     func numberOfSectionsInTableView(tableView:UITableView)->Int
@@ -133,8 +146,14 @@ class TableView:UITableView,UITableViewDelegate, UITableViewDataSource
         let data = section[indexPath.row - 1]
         
         let item =  data as! MessageItem
+        /*
         let height  = item.insets.top + max(item.view.frame.size.height , 52) + item.insets.bottom
-        print("height:\(height)")
+ */
+        let cellId = "ChatCell"
+        let cell =  TableViewCell(data:data as! MessageItem, reuseIdentifier:cellId)
+        
+        let height  = cell.insets.top + max(cell.customView.frame.size.height , 52) + cell.insets.bottom
+        //print("cell height:\(height)")
         return height
     }
     

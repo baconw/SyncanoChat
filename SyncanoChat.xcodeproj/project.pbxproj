@@ -15,6 +15,7 @@
 		9E0A5DA51D489440000892A5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0A5DA41D489440000892A5 /* Constants.swift */; };
 		9E0A5DA71D4894D1000892A5 /* CTChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0A5DA61D4894D1000892A5 /* CTChannel.swift */; };
 		9E0A5DAB1D48AA39000892A5 /* CTPlease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0A5DAA1D48AA39000892A5 /* CTPlease.swift */; };
+		9E680A911D890CCB00C4BAA7 /* ISRDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E680A901D890CCB00C4BAA7 /* ISRDataHelper.m */; };
 		9E6C2CFE1D3F6474006640B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C2CFD1D3F6474006640B3 /* AppDelegate.swift */; };
 		9E6C2D001D3F6474006640B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6C2CFF1D3F6474006640B3 /* ViewController.swift */; };
 		9E6C2D031D3F6474006640B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6C2D011D3F6474006640B3 /* Main.storyboard */; };
@@ -104,6 +105,8 @@
 		9E0A5DA41D489440000892A5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9E0A5DA61D4894D1000892A5 /* CTChannel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTChannel.swift; sourceTree = "<group>"; };
 		9E0A5DAA1D48AA39000892A5 /* CTPlease.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTPlease.swift; sourceTree = "<group>"; };
+		9E680A8F1D890CCA00C4BAA7 /* ISRDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISRDataHelper.h; sourceTree = "<group>"; };
+		9E680A901D890CCB00C4BAA7 /* ISRDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISRDataHelper.m; sourceTree = "<group>"; };
 		9E6C2CFA1D3F6474006640B3 /* SyncanoChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SyncanoChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E6C2CFD1D3F6474006640B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E6C2CFF1D3F6474006640B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -302,6 +305,8 @@
 				9E6C2D041D3F6474006640B3 /* Assets.xcassets */,
 				9E6C2D061D3F6474006640B3 /* LaunchScreen.storyboard */,
 				9E6C2D091D3F6474006640B3 /* Info.plist */,
+				9E680A8F1D890CCA00C4BAA7 /* ISRDataHelper.h */,
+				9E680A901D890CCB00C4BAA7 /* ISRDataHelper.m */,
 				9E6C2D2D1D3F67DA006640B3 /* SyncanoChat-Bridging-Header.h */,
 				9E6C2D301D40B173006640B3 /* MessageManager.swift */,
 				9E6C2D321D41C77B006640B3 /* Settings.swift */,
@@ -653,6 +658,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E680A911D890CCB00C4BAA7 /* ISRDataHelper.m in Sources */,
 				9E6C2D311D40B173006640B3 /* MessageManager.swift in Sources */,
 				9E0A5DA51D489440000892A5 /* Constants.swift in Sources */,
 				9E6C2D001D3F6474006640B3 /* ViewController.swift in Sources */,
@@ -828,6 +834,7 @@
 					"$(SRCROOT)/lib",
 				);
 				INFOPLIST_FILE = SyncanoChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wpd.game.SyncanoChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -852,6 +859,7 @@
 					"$(SRCROOT)/lib",
 				);
 				INFOPLIST_FILE = SyncanoChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wpd.game.SyncanoChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";

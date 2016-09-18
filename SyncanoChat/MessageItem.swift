@@ -2,8 +2,14 @@ import UIKit
 
 enum ChatType
 {
-    case Mine
-    case Someone
+    case Outgoing
+    case Incoming
+}
+
+enum MessageContent
+{
+    case text(NSString)
+    case image(UIImage)
 }
 
 class MessageItem
@@ -12,18 +18,18 @@ class MessageItem
     var date:NSDate
     var mtype:ChatType
     
-    var view:UIView
-    var insets:UIEdgeInsets
+    //var view:UIView
+    //var insets:UIEdgeInsets
     
-    var text:NSString
-    var image:UIImage
+    var content:MessageContent
     
-    class func getTextInsetsMine() -> UIEdgeInsets
+    /*
+    class func getTextInsetsOutgoing() -> UIEdgeInsets
     {
         return UIEdgeInsets(top:5, left:10, bottom:11, right:17)
     }
     
-    class func getTextInsetsSomeone() -> UIEdgeInsets
+    class func getTextInsetsIncoming() -> UIEdgeInsets
     {
         return UIEdgeInsets(top:5, left:15, bottom:11, right:10)
     }
@@ -35,19 +41,22 @@ class MessageItem
     {
         return UIEdgeInsets(top:11, left:13, bottom:16, right:22)
     }
+ */
     
-    init(user:UserInfo, date:NSDate, mtype:ChatType, view:UIView, insets:UIEdgeInsets)
+    init(user:UserInfo, date:NSDate, mtype:ChatType, content:MessageContent)
     {
-        self.view = view
+        //self.view = view
         self.user = user
         self.date = date
         self.mtype = mtype
-        self.insets = insets
+        //self.insets = insets
+        self.content = content
     }
     
     //文字类型消息
-    convenience init(body:NSString, user:UserInfo, date:NSDate, mtype:ChatType)
+    convenience init(body:MessageContent, user:UserInfo, date:NSDate, mtype:ChatType)
     {
+        /*
         let font =  UIFont.boldSystemFontOfSize(12)
         
         let width =  225, height = 10000.0
@@ -63,13 +72,16 @@ class MessageItem
         label.text = (body.length != 0 ? body as String : "")
         label.font = font
         label.backgroundColor = UIColor.clearColor()
+        */
+        /*
+        let insets:UIEdgeInsets =  (mtype == ChatType.Outgoing ? MessageItem.getTextInsetsOutgoing() : MessageItem.getTextInsetsIncoming())
+ */
         
-        let insets:UIEdgeInsets =  (mtype == ChatType.Mine ? MessageItem.getTextInsetsMine() : MessageItem.getTextInsetsSomeone())
-        
-        self.init(user:user, date:date, mtype:mtype, view:label, insets:insets)
+        self.init(user:user, date:date, mtype:mtype, content: body)
     }    
     
     //图片类型消息
+    /*
     convenience init(image:UIImage, user:UserInfo,  date:NSDate, mtype:ChatType)
     {
         var size = image.size
@@ -88,4 +100,5 @@ class MessageItem
         
         self.init(user:user,  date:date, mtype:mtype, view:imageView, insets:insets)
     }
+ */
 }

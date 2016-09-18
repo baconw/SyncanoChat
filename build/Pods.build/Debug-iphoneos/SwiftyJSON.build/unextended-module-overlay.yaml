@@ -1,0 +1,13 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': '/Users/dongyi228/Documents/SyncanoChat/build/Debug-iphoneos/SwiftyJSON/SwiftyJSON.framework/Modules'
+    'contents': [{
+      'type': 'file',
+      'name': 'module.modulemap',
+      'external-contents': '/Users/dongyi228/Documents/SyncanoChat/build/Pods.build/Debug-iphoneos/SwiftyJSON.build/unextended-module.modulemap',
+    }]
+  }]
+}

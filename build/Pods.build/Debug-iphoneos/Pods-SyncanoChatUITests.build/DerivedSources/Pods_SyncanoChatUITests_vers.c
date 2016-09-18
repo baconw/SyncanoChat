@@ -1,0 +1,1 @@
+ const unsigned char Pods_SyncanoChatUITestsVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:Pods_SyncanoChatUITests  PROJECT:Pods-1" "\n"; const double Pods_SyncanoChatUITestsVersionNumber __attribute__ ((used)) = (double)1.;
