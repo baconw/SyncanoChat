@@ -1,7 +1,7 @@
 import UIKit
 
-public var TextIncoming = UIEdgeInsets(top:5, left:15, bottom:11, right:10)
-public var TextOutgoing = UIEdgeInsets(top:5, left:10, bottom:11, right:17)
+public var TextIncoming = UIEdgeInsets(top:10, left:15, bottom:11, right:10)
+public var TextOutgoing = UIEdgeInsets(top:10, left:10, bottom:11, right:17)
 public var ImgIncoming = UIEdgeInsets(top:11, left:13, bottom:16, right:22)
 public var ImgOutgoing = UIEdgeInsets(top:11, left:13, bottom:16, right:22)
 

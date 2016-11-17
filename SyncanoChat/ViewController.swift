@@ -54,16 +54,16 @@ class ViewController: UIViewController, ChatDataSource,UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        print("11111")
+        //print("11111")
         self.setup()
-        print("22222")
+        //print("22222")
         self.setupIFly()
-        print("33333")
+        //print("33333")
         //huangge
         setupChatTable()
-        print("44444")
+        //print("44444")
         setupSendPanel()
-        print("55555")
+        //print("55555")
         //huangge end
     }
     
@@ -526,7 +526,7 @@ extension ViewController {
                     let thatChat =  MessageItem(body:.text(responseMessage.text!), user:self.you, date:NSDate(), mtype:ChatType.Incoming)
                     self.Chats.addObject(thatChat)
                     self.tableView.reloadData()
-                    self.iFlySpeechSynthesizer.startSpeaking(responseMessage.text)
+                    //self.iFlySpeechSynthesizer.startSpeaking(responseMessage.text)
                     
                 }else{
                     print("chat error \(error)")
@@ -606,7 +606,7 @@ extension ViewController {
         iFlySpeechSynthesizer.delegate = self
         iFlySpeechSynthesizer.setParameter(IFlySpeechConstant.TYPE_CLOUD(),forKey: IFlySpeechConstant.ENGINE_TYPE())
         iFlySpeechSynthesizer.setParameter("50", forKey: IFlySpeechConstant.VOLUME())
-        iFlySpeechSynthesizer.setParameter("xiaoyan", forKey: IFlySpeechConstant.VOICE_NAME())
+        iFlySpeechSynthesizer.setParameter("xiaojing", forKey: IFlySpeechConstant.VOICE_NAME())//xiaojing
         iFlySpeechSynthesizer.setParameter("tts.pcm", forKey: IFlySpeechConstant.TTS_AUDIO_PATH())
         //iFlySpeechSynthesizer.startSpeaking("你好，我是科大讯飞的小燕")
         
